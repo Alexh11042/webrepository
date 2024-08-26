@@ -1,0 +1,38 @@
+<section class="login">
+    <div class="container">
+        <div class="container-login">
+            <div class="logo">
+                <img src="/assets/img/util/logo2.png" alt="UNIRENTA" class="logo-img" >
+            </div>
+            <form class="form" [formGroup]="loginForm">
+                <div class="form-fields">
+                    <!-- <h3 class="form-title">Iniciar Sesión</h3> -->
+                    <mat-form-field class="form-field field-email">
+                        <input matInput type="email" id="email" formControlName="email" placeholder="Escriba su usuario">
+                        <mat-error class="error-email" *ngIf="loginForm.get('email')?.errors?.['required']">Ingresar correo electrónico</mat-error>
+                        <mat-error class="error-email" *ngIf="loginForm.get('email')?.errors?.['email']">
+                            example&#64;gmail.com</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput [type]="passwordIsShown ? 'text' : 'password'" formControlName="password"
+                            placeholder="Escriba su contraseña" id="password">
+                        <mat-icon matSuffix class="passwordIcon" (click)="togglePasswordVisibility()"
+                            *ngIf="loginForm.get('password')?.value">{{passwordIsShown ?
+                            'visibility' : 'visibility_off'}}</mat-icon>
+                        <mat-error class="error-password" *ngIf="loginForm.get('password')?.errors?.['required']">Ingresar contraseña</mat-error>
+                    </mat-form-field>
+                    <div class="form-field field-checkbox">
+                        <mat-checkbox type="checkbox" formControlName="rememberMe" id="rememberMe">Recordar cuenta</mat-checkbox>
+                    </div>
+                    <div class="form-submit">
+                        <button class="button" [disabled]="loginForm.invalid" (click)="login()" id="button">Login</button>
+                    </div>
+                    <div class="form-link">
+                        <span>Aún no tienes cuenta?</span>
+                        <a href="signup">Registrarse</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

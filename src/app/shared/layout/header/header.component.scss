@@ -1,0 +1,168 @@
+// Variables SCSS
+$warm-yellow: #FFD54F; // Color amarillo cálido
+$scrolled-yellow: #FFEB3B; // Color amarillo más intenso para cuando está scrolleado
+
+.header {
+  background-color: $warm-yellow; // Fondo amarillo cálido por defecto
+  transition: background-color 0.3s ease, transform 0.3s ease; // Transición suave para el color y el movimiento
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transform: translateY(0); // Estado inicial
+
+  &.scrolled {
+    background-color: $scrolled-yellow; // Fondo amarillo más intenso cuando está scrolleado
+    transform: translateY(-10px); // Desplaza el encabezado hacia arriba al hacer scroll
+  }
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    max-width: 1200px; // Ancho máximo del contenedor
+    margin: 0 auto; // Centra el contenedor horizontalmente
+  }
+
+  .header-nav {
+    display: flex;
+    align-items: center;
+
+    .header-logo {
+      margin-right: 2rem;
+
+      .logo-img {
+        width: 130px; // Ancho del logo
+        padding-right: 20px;
+      }
+    }
+    .header-search-form {
+      margin: 10px;
+      text-align: center;
+      display: flex;
+      padding: 10px;
+      width: 500px;
+    }
+    .header-search-icon{
+      translate: -35px;
+    }
+    .header-search-text {
+      padding: 10px;
+      background-color: white;
+      border-radius: 20px;
+      border: 1px solid white;
+      width: 100%;
+      max-width: 500px;
+    }
+    .header-menu {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      ul {
+        display: flex;
+        padding: 0;
+        margin: 0;
+
+        .header-menu-item {
+          margin-right: 1rem;
+
+          .header-menu-item-link {
+            text-decoration: none;
+            color: #071739; // Color de texto de los enlaces
+            padding: 0.5rem 1rem;
+
+            &:hover,
+            &.active {
+              color: $scrolled-yellow; // Color del enlace cuando está activo o en hover
+            }
+          }
+        }
+      }
+    }
+
+    .header-phone {
+      .phone-link {
+        text-decoration: none;
+        color: #071739;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .header-account {
+    display: flex;
+    align-items: center;
+
+    .header-account-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #071739;
+
+      svg {
+        margin-right: 0.5rem;
+      }
+
+      span {
+        font-weight: bold;
+      }
+    }
+
+    .custom {
+      svg {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+  .header-publicar{
+    .btnPublicar{
+      padding: 10px;
+      background-color: #07d807;
+      color: white;
+      border-radius: 10px;
+    }
+  }
+
+  // Media Queries para dispositivos móviles
+  @media (max-width: 768px) {
+    .header-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .header-nav {
+      width: 100%;
+      .header-logo {
+        margin-bottom: 1rem;
+      }
+      .header-menu {
+        display: none; // Oculta el menú en pantallas pequeñas
+      }
+    }
+
+    .header-account {
+      margin-top: 1rem;
+      .header-account-link {
+        span {
+          display: none; // Oculta el texto "Hola, {{userName}}!" en pantallas pequeñas
+        }
+      }
+    }
+  }
+
+  // Media Queries para tabletas
+  @media (max-width: 1024px) and (min-width: 769px) {
+    .header-nav {
+      .header-menu {
+        .header-menu-item {
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
+}

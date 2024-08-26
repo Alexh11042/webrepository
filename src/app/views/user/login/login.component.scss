@@ -1,0 +1,189 @@
+
+@import "../../../../assets/styles/form";
+.login {
+    padding: 25px 0 92px;
+    // background-color: #f5f5f5; // Agregar un color de fondo suave
+
+    .container {
+        .container-login {
+            background-color: #dddddd;
+            border-radius: 5%;
+            width: 520px;
+            padding: 30px;  // Incrementa el padding para dar más espacio
+            margin: 0 auto;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); // Añadir sombra para profundidad
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 8px;
+            background-color: white;
+            width: 205px;
+            height: 190px;
+            border-radius: 50%;  // Hacer el logo completamente circular
+            margin: 0 auto;
+            //margin-top: -80px;  // Coloca el logo sobre el borde superior del contenedor
+
+            img {
+                width: 180px;
+                height: 165px;
+            }
+        }
+
+        .form-title {
+            text-align: center;
+            font-size: 1.75rem;  // Ajusta el tamaño del título
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .form {
+            padding-top: 14px;
+            padding-bottom: 14px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            .form-fields{
+                padding-top: 30px;
+            }
+            .mat-form-field {
+                width: 100%;
+                margin-bottom: 16px;
+            }
+
+            .button {
+                width: 100%;
+                padding: 12px;
+                background-color: #a1a1a1;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                    background-color: #898989;
+                }
+
+                &:disabled {
+                    background-color: #d1d1d1;
+                    cursor: not-allowed;
+                }
+            }
+        }
+
+        .login-image {
+            margin-left: 178px;
+        }
+    }
+
+    // Responsive styles
+    @media (max-width: 768px) {
+        padding: 50px 0;
+
+        .container-login {
+            width: 90%;
+            padding: 20px;
+        }
+
+        .logo {
+            width: 160px;
+            height: 150px;
+            margin-top: -60px;
+
+            img {
+                width: 140px;
+                height: 130px;
+            }
+        }
+
+        .form-title {
+            font-size: 1.5rem;
+        }
+
+        .button {
+            padding: 10px;
+            font-size: 0.875rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        padding: 30px 0;
+
+        .container-login {
+            width: 95%;
+        }
+
+        .logo {
+            width: 140px;
+            height: 130px;
+            margin-top: -50px;
+
+            img {
+                width: 120px;
+                height: 110px;
+            }
+        }
+
+        .form-title {
+            font-size: 1.25rem;
+        }
+
+        .button {
+            padding: 8px;
+            font-size: 0.75rem;
+        }
+    }
+}
+
+// .login {
+//     padding: 106px 0 92px;
+
+//     .container {
+//         // display: flex;
+//         .container-login{
+//             background-color: #dfdbdb;
+//             border-radius: 5%;
+//             width: 520px;
+//             padding: 10px;
+//             margin: 0 auto;
+//         }
+//         .logo {
+//             display: flex;
+//             padding: 8px;
+//             background-color: white;
+//             width: 205px; /* Ajusta el tamaño del logo según sea necesario */
+//             height: 190px;
+//             border-radius: 98%; /* Si quieres que el logo se vea circular */
+//             margin: 0 auto;
+            
+//             img {
+//               padding: 8px;
+//               width: 180px; /* Ajusta el tamaño del logo según sea necesario */
+//               height: 165px;
+//               margin: 8px;
+//             }
+//           }
+//         .form-title{
+//             text-align: center;
+//         }
+//         .form {
+//             padding-top: 14px;
+//             padding-bottom: 14px;
+//             margin: 0 auto;
+//             display: flex;
+//             justify-content: center;
+//             align-items: center;
+//             color: black;
+//         }
+
+//         .login-image {
+//             margin-left: 178px;
+//         }
+//     }
+// }

@@ -1,0 +1,67 @@
+<section class="signup">
+    <div class="container">
+        <form class="form" [formGroup]="signUpForm">
+            <h3 class="form-title">Registrar Usuario</h3>
+            <div class="form-fields">
+                <mat-form-field class="form-field field-name">
+                    <input matInput type="text" formControlName="name" placeholder="Escriba sus Nombres" id="name">
+                    <mat-error class="error-name" *ngIf="signUpForm.get('name')?.errors?.['required']">Ingresar nombre</mat-error>
+                    <mat-error class="error-name" *ngIf="signUpForm.get('name')?.errors?.['pattern']">El nombre puede
+                        contener letras y espacios. Cada palabra está en mayúscula.</mat-error>
+                </mat-form-field>
+                <mat-form-field class="form-field field-lastname">
+                    <input matInput type="text" formControlName="lastname" placeholder="Escriba sus apellidos" id="lastname">
+                    <mat-error class="error-lastname" *ngIf="signUpForm.get('lastname')?.errors?.['required']">Ingresar sus apellidos</mat-error>
+                    <mat-error class="error-lastname" *ngIf="signUpForm.get('lastname')?.errors?.['pattern']">El nombre puede
+                        contener letras y espacios. Cada palabra está en mayúscula.</mat-error>
+                </mat-form-field>
+                <mat-form-field class="form-field field-numberdocument">
+                    <input matInput type="text" formControlName="numberdocument" placeholder="Escriba su DNI" id="numberdocument">
+                    <mat-error class="error-numberdocument" *ngIf="signUpForm.get('numberdocument')?.errors?.['required']">Ingresar su DNI</mat-error>
+                    <mat-error class="error-numberdocument" *ngIf="signUpForm.get('numberdocument')?.errors?.['pattern']">El nombre puede
+                        contener letras y espacios. Cada palabra está en mayúscula.</mat-error>
+                </mat-form-field>
+                <mat-form-field class="form-field field-email">
+                    <input matInput type="email" formControlName="email" placeholder="Escriba su correo" id="email">
+                    <mat-error class="error-email" *ngIf="signUpForm.get('email')?.errors?.['required']">Ingresar correo electrónico</mat-error>
+                    <mat-error class="error-email" *ngIf="signUpForm.get('email')?.errors?.['email']">El correo electrónico debe tener un formato
+                        example&#64;gmail.com</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput [type]="passwordIsShown ? 'text' : 'password'" formControlName="password"
+                        placeholder="Escriba su contraseña" id="password">
+                    <mat-icon matSuffix (click)="togglePasswordVisibility()"
+                        *ngIf="signUpForm.get('password')?.value">{{passwordIsShown ? 'visibility' :
+                        'visibility_off'}}</mat-icon>
+                    <mat-error class="error-password" *ngIf="signUpForm.get('password')?.errors?.['required']">Ingresar contraseña</mat-error>
+                    <mat-error class="error-password" *ngIf="signUpForm.get('password')?.errors?.['pattern']">Contraseña
+                        Debe ser al menos 8
+                        caracteres, contenga al menos 1 letra mayúscula y al menos 1 número
+                    </mat-error>
+                </mat-form-field>
+                <div class="form-field field-checkbox">
+                    <mat-checkbox type="checkbox" formControlName="agreement" id="agreement">
+                        Acepto <a routerLink="/policy" fragment="termsOfUse" target="_blank">condiciones
+                            acuerdo de usuario</a> y yo doy <a routerLink="/policy"
+                            fragment="personalDataProcessing" target="_blank">consentimiento para el procesamiento de datos personales
+                            datos</a>.
+                    </mat-checkbox>
+                    <mat-error class="error-agreement" *ngIf="signUpForm.get('agreement')?.invalid">Necesario
+                        confirmar la aceptación de los términos del acuerdo de usuario y el consentimiento para el procesamiento
+                        datos personales</mat-error>
+                </div>
+                <div class="form-submit">
+                    <button class="button" [disabled]="!signUpForm.valid" (click)="signUp()"
+                        id="button">Crear cuenta</button>
+                </div>
+                <div class="form-link">
+                    <span>¿Ya tienes una cuenta?</span>
+                    <a routerLink="/login">Iniciar Sesión</a>
+                </div>
+            </div>
+        </form>
+        <!-- <div class="signup-image">
+            <img src="/assets/images/auth/signup.png" alt="auth">
+        </div> -->
+    </div>
+</section>

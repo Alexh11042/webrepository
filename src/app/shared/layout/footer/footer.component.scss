@@ -1,0 +1,146 @@
+// Variables de color
+$light-blue-background-color: #FFEB3B;
+$light-blue-text-color: #000000;
+
+// Estilos del footer
+.footer {
+  background-color: $light-blue-background-color;
+  padding: 20px 0;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+										 
+																																	
+			  
+			
+	  
+		  
+											   
+								
+													  
+				  
+							  
+												
+									
+												 
+						 
+			 
+		  
+											  
+															
+									   
+																				
+																										 
+				 
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																				   
+							   
+				
+			
+																						  
+																										 
+				 
+																																																																																																																																																																										
+							   
+				
+			
+																						   
+																										 
+				 
+																																																																																																																																																																																																																																																																																								
+							   
+				
+			
+			
+		  
+		
+																														
+		 
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 15px;
+  }
+
+  .footer-section {
+    flex: 1;
+    margin: 10px;
+    min-width: 200px;
+    
+
+    .footer-contact-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: $light-blue-text-color;
+    }
+    .footer-section-about{
+      display: flex;
+      padding-right: 10px;
+    }
+    .footer-section-img{
+      float: left;
+      padding-right: 10px;
+    }
+    .footer-section-text{
+      padding-top: 10px;
+      padding-right: 10px;
+      text-align: justify;
+    }
+
+    p {
+      color: $light-blue-text-color;
+      margin: 5px 0;
+    }
+
+    .logo-img {
+      margin-bottom: 10px;
+    }
+  }
+
+  .footer-social {
+    .footer-contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .footer-social-network {
+      width: 50px;
+      height: 50px;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+
+      svg {
+        fill: $light-blue-text-color;
+      }
+    }
+  }
+
+  .footer-rights {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 14px;
+    display: flex;
+    // color: darken($light-blue-text-color, 20%);
+    .footer-rights-text{
+      font-weight: bold;
+    }
+  }
+}
+
+// @media (max-width: 768px) {
+//   .footer .container {
+//     flex-direction: column;
+//     align-items: center;
+//   }
+
+//   .footer-section {
+//     text-align: center;
+//   }
+// }

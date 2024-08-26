@@ -1,0 +1,16 @@
+@import "../../../../assets/styles/form";
+
+.signup {
+    padding: 25px 0;
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .signup-image {
+            padding-top: 3px;
+            margin-left: 185px;
+        }
+    }
+}
